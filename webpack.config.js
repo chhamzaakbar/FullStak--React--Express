@@ -1,26 +1,25 @@
-const { resolve } = require("path");
+// import path from 'path';
+
 const path = require("path");
-module.exports = 
-{
-    mode:"development",
-    entry: path.resolve (__dirname, 'src', 'app'),
+// export default {
+module.exports = {
+    mode: 'development',
+    entry: path.resolve(__dirname, 'src','app'),
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename : 'bundle.js',
-        publicPath:  '/'
+        path: path.resolve(__dirname,'dist'),
+        filename: 'bundle.js',
+        publicPath: '/',
     },
-
-resolve: {
-    extensions: ['.js', '.jsx']
-
-},
-devServer: {
-    historyApiFallback: true
-},
-module: {
-    rules:[{
-        test: /\.jsx?/,
-        loader: 'babel_loader'
-    }]
-}
+    resolve: {
+        extensions: ['.js','.jsx']
+    },
+    devServer: {
+        historyApiFallback: true
+    },
+    module: {
+        rules: [{
+            test: /\.jsx?/,
+            loader:'babel-loader'
+        }]
+    }
 }
